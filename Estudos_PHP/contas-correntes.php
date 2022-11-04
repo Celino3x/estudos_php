@@ -22,4 +22,4 @@ $banco = [$conta001, $conta002, $conta003];
 
 echo $conta001['titular'];
 
-//Estudos de PHP
+//Estudos de PHP - Array Associativos
