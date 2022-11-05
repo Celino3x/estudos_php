@@ -25,5 +25,3 @@ for ($i = 0; $i < count($banco); $i++){
 }
 
 //echo $conta001['titular'];
-
-//Estudos de PHP - Array Associativos
