@@ -13,13 +13,17 @@ $conta002 = [
 ];
 
 $conta003 = [
-    'titular' => 'Juscelino',
+    'titular' => 'Jordan',
     'saldo' => 1500,
     'cc' => 0002
 ];
 
 $banco = [$conta001, $conta002, $conta003];
 
-echo $conta001['titular'];
+for ($i = 0; $i < count($banco); $i++){
+    echo $banco[$i]['titular'] . PHP_EOL;
+}
+
+//echo $conta001['titular'];
 
 //Estudos de PHP - Array Associativos
