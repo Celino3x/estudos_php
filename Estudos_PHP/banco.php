@@ -1,27 +1,6 @@
 <?php
 
-function sacar(array $conta, float $valorASacar):array {
-    if ($valorASacar > $conta['saldo']){
-        exibeMensagem("Operação não pode ser realizada, não pode sacar esse valor");
-    } else {
-        $conta['saldo'] -= $valorASacar;
-    }
-    return $conta;
-}
-
-function exibeMensagem(string $mensagem) {
-    echo $mensagem .PHP_EOL;
-}
-
-
-function depositar(array $conta, $valorADepositar):array{
-    if($valorADepositar > 0){
-        $conta['saldo'] += $valorADepositar;
-    } else{
-        exibeMensagem("Depósito precisam ser positivos");
-    }
-    return $conta;
-}
+include 'funcoes.php';
 
 $banco = [
     '225.464.694-94' => [
@@ -62,6 +41,13 @@ if (1600 > $banco['422.511.515-56']['saldo']){
 }
 */
 
+unset($banco['123.116.167-14']);
+
+titularComLetrasMaiusculas($banco['422.511.515-56']);
+
 foreach($banco as $cpf => $conta){
-    exibeMensagem($cpf . " " . $conta['titular'] . ' ' . $conta['saldo']);
+    ['titular' => $titular, 'saldo' => $saldo ]= $conta;
+    exibeMensagem(
+        "$cpf $titular $saldo"
+    );
 }
